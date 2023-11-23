@@ -1,9 +1,9 @@
 from pathlib import Path
 import PySimpleGUI as ui
-from .Helper import *
+import Helper as h
 
 
 
-crm_file = choose_crm_file()
-
-print(crm_file)
+if __name__ == "__main__":
+    crm_file = h.choose_crm_file()
+    print(crm_file)
