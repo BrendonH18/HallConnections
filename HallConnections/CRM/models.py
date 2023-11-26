@@ -9,6 +9,9 @@ class Contact(models.Model):
     address = models.CharField(max_length=255)
     created_on = models.DateField(auto_now_add=True)
 
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
+
 class Change(models.Model):
     user = models.ForeignKey(
         authModels.User,
@@ -44,6 +47,9 @@ class Activity(models.Model):
         blank=True,
         null=True
     )
+
+    def __str__(self) -> str:
+        return f"{self.contact.first_name} {self.contact.last_name} - {self.kind}"
     
     
 
